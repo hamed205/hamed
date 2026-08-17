@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>آرایشگاه حمید | اصلاح مو، ریش و استایل مردانه</title>
+<meta name="description" content="آرایشگاه حمید؛ ارائه خدمات اصلاح مو، اصلاح صورت، خط ریش و سشوار و حالت‌دهی در فرهنگ شهر. تماس: ۰۹۹۱۸۷۴۰۸۱۲">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0a0a">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- LocalBusiness / BarberShop structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "آرایشگاه حمید",
+  "slogan": "استایل خاص، اعتماد به نفس دائم",
+  "telephone": "+989918740812",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "فرهنگ شهر، فرهنگ ۱۸ شرقی، جنب پارکینگ مسجد سیدالشهدا",
+    "addressCountry": "IR"
+  },
+  "priceRange": "$$",
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "اصلاح مو" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "اصلاح صورت" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "خط ریش" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "سشوار و حالت‌دهی" } }
+  ]
+}
+</script>
+
+<style>
+/* ============================================================
+   ARAYESHGAH HAMID — Luxury Men's Barbershop Landing Page
+   Design tokens
+   ============================================================ */
+:root{
+  --black-deep:#0a0a0a;
+  --black-soft:#141414;
+  --black-card:#161513;
+  --gray-line:#2a2825;
+  --gray-text:#9a9690;
+  --white:#f3f0ea;
+  --gold:#c9a961;
+  --gold-bright:#e8cd8f;
+  --gold-dim:rgba(201,169,97,0.35);
+  --gold-faint:rgba(201,169,97,0.12);
+
+  --font-display:'Vazirmatn', sans-serif;
+  --font-body:'Vazirmatn', sans-serif;
+
+  --container:1200px;
+  --gap-section: clamp(64px, 10vw, 140px);
+  --radius: 2px;
+  --ease: cubic-bezier(.22,1,.36,1);
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--black-deep);
+  color:var(--white);
+  font-family:var(--font-body);
+  font-weight:400;
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+button{ font-family:inherit; cursor:pointer; }
+section{ position:relative; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+}
+
+::selection{ background:var(--gold); color:var(--black-deep); }
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 24px;
+}
+@media(min-width:768px){ .container{ padding:0 40px; } }
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:Georgia, 'Times New Roman', serif;
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+.eyebrow::before{
+  content:'';
+  width:26px; height:1px;
+  background:var(--gold);
+  display:inline-block;
+}
+
+h1,h2,h3{
+  font-family:var(--font-display);
+  font-weight:800;
+  color:var(--white);
+  line-height:1.35;
+}
+h2{ font-size:clamp(28px,4vw,44px); }
+h3{ font-size:20px; font-weight:700; }
+p{ color:var(--gray-text); font-size:16px; }
+
+.section-head{
+  max-width:640px;
+  margin-bottom:56px;
+}
+.section-head.center{ margin-inline:auto; text-align:center; }
+.section-head.center .eyebrow{ justify-content:center; }
+.section-head.center .eyebrow::before{ display:none; }
+
+/* ---------- reveal on scroll ---------- */
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .9s var(--ease), transform .9s var(--ease);
+}
+.reveal.in-view{ opacity:1; transform:translateY(0); }
+.reveal-delay-1.in-view{ transition-delay:.1s; }
+.reveal-delay-2.in-view{ transition-delay:.2s; }
+.reveal-delay-3.in-view{ transition-delay:.3s; }
+
+/* ---------- divider ---------- */
+.gold-divider{
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  margin:0 auto;
+  width:100%;
+}
+.gold-divider::before,.gold-divider::after{
+  content:'';
+  flex:1;
+  max-width:120px;
+  height:1px;
+  background:linear-gradient(90deg, transparent, var(--gold-dim));
+}
+.gold-divider::after{ background:linear-gradient(270deg, transparent, var(--gold-dim)); }
+.gold-divider .diamond{
+  width:7px; height:7px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  flex-shrink:0;
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:16px 34px;
+  font-size:15px;
+  font-weight:600;
+  border-radius:var(--radius);
+  border:1px solid transparent;
+  transition:all .35s var(--ease);
+  white-space:nowrap;
+}
+.btn-gold{
+  background:linear-gradient(135deg, var(--gold-bright), var(--gold));
+  color:#0a0a0a;
+  box-shadow:0 0 0 rgba(201,169,97,0);
+}
+.btn-gold:hover{
+  box-shadow:0 8px 30px -6px rgba(201,169,97,0.55);
+  transform:translateY(-2px);
+}
+.btn-outline{
+  border-color:var(--gold-dim);
+  color:var(--white);
+  background:transparent;
+}
+.btn-outline:hover{
+  border-color:var(--gold);
+  background:var(--gold-faint);
+}
+.btn svg{ width:18px; height:18px; flex-shrink:0; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position:fixed;
+  top:0; right:0; left:0;
+  z-index:100;
+  padding:20px 0;
+  transition:background .4s var(--ease), padding .4s var(--ease), border-color .4s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.site-header.scrolled{
+  background:rgba(10,10,10,0.88);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  padding:14px 0;
+  border-color:var(--gray-line);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{ display:flex; align-items:center; gap:12px; }
+.brand-mark{ width:38px; height:38px; flex-shrink:0; }
+.brand-name{
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:19px;
+  letter-spacing:0;
+}
+.main-nav{ display:none; }
+.main-nav ul{ display:flex; align-items:center; gap:36px; }
+.main-nav a{
+  font-size:14.5px;
+  color:var(--white);
+  position:relative;
+  padding:4px 0;
+  transition:color .3s;
+}
+.main-nav a::after{
+  content:'';
+  position:absolute; right:0; bottom:0;
+  width:0; height:1px;
+  background:var(--gold);
+  transition:width .35s var(--ease);
+}
+.main-nav a:hover{ color:var(--gold-bright); }
+.main-nav a:hover::after{ width:100%; }
+
+.header-cta{ display:none; }
+.header-actions{ display:flex; align-items:center; gap:14px; }
+
+.burger{
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  gap:5px;
+  width:40px; height:40px;
+  background:none; border:1px solid var(--gray-line);
+}
+.burger span{ width:18px; height:1px; background:var(--gold); display:block; transition:all .3s; }
+.burger.open span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+.burger.open span:nth-child(2){ opacity:0; }
+.burger.open span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+@media(min-width:960px){
+  .main-nav{ display:block; }
+  .header-cta{ display:inline-flex; }
+  .burger{ display:none; }
+}
+
+.mobile-nav{
+  position:fixed; inset:0;
+  background:var(--black-deep);
+  z-index:99;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:34px;
+  opacity:0; visibility:hidden;
+  transition:opacity .4s var(--ease), visibility .4s;
+}
+.mobile-nav.open{ opacity:1; visibility:visible; }
+.mobile-nav a{ font-size:24px; font-weight:600; }
+.mobile-nav .btn{ margin-top:14px; }
+@media(min-width:960px){ .mobile-nav{ display:none; } }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  padding-top:120px;
+  padding-bottom:80px;
+  position:relative;
+  background:
+    radial-gradient(ellipse 60% 50% at 75% 15%, rgba(201,169,97,0.10), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 20% 100%, rgba(201,169,97,0.05), transparent 60%),
+    var(--black-deep);
+  overflow:hidden;
+  border-bottom:1px solid var(--gray-line);
+}
+.hero-watermark{
+  position:absolute;
+  left:-8%; top:50%;
+  transform:translateY(-50%);
+  width:min(60vw, 640px);
+  opacity:0.05;
+  pointer-events:none;
+}
+.hero-stripes{
+  position:absolute;
+  top:0; bottom:0; left:0;
+  width:4px;
+  display:flex; flex-direction:column;
+  opacity:0.5;
+}
+.hero-stripes span{ flex:1; }
+.hero-stripes span:nth-child(1){ background:var(--gold); }
+.hero-stripes span:nth-child(2){ background:var(--black-deep); }
+.hero-stripes span:nth-child(3){ background:var(--white); }
+.hero-stripes span:nth-child(4){ background:var(--black-deep); }
+
+.hero-inner{
+  position:relative; z-index:2;
+  max-width:760px;
+}
+.hero-kicker{
+  display:flex; align-items:center; gap:12px;
+  font-size:13px; letter-spacing:2px; color:var(--gold);
+  margin-bottom:26px;
+  font-family:Georgia, serif;
+  text-transform:uppercase;
+}
+.hero-kicker::before{ content:''; width:34px; height:1px; background:var(--gold); }
+
+.hero h1{
+  font-size:clamp(38px, 7vw, 68px);
+  font-weight:900;
+  margin-bottom:20px;
+}
+.hero .tagline{
+  font-size:clamp(18px, 2.4vw, 24px);
+  color:var(--gold-bright);
+  font-weight:500;
+  margin-bottom:22px;
+}
+.hero .desc{
+  font-size:17px;
+  max-width:520px;
+  margin-bottom:44px;
+}
+.hero-actions{
+  display:flex; flex-wrap:wrap; gap:16px;
+}
+.hero-actions .btn{ width:100%; }
+@media(min-width:560px){ .hero-actions .btn{ width:auto; } }
+
+.hero-phone-note{
+  display:flex; align-items:center; gap:10px;
+  margin-top:40px;
+  font-size:15px;
+  color:var(--gray-text);
+}
+.hero-phone-note b{ color:var(--gold-bright); font-weight:700; letter-spacing:0.5px; }
+
+/* ============================================================
+   ABOUT / INTRO
+   ============================================================ */
+.about{
+  padding:var(--gap-section) 0;
+  border-bottom:1px solid var(--gray-line);
+}
+.about-grid{
+  display:grid;
+  gap:40px;
+  align-items:center;
+}
+@media(min-width:900px){
+  .about-grid{ grid-template-columns:0.9fr 1.1fr; gap:80px; }
+}
+.about-visual{
+  position:relative;
+  aspect-ratio:4/5;
+  border:1px solid var(--gray-line);
+  background:
+    linear-gradient(160deg, var(--black-card), var(--black-deep));
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.about-visual::before{
+  content:'';
+  position:absolute; inset:14px;
+  border:1px solid var(--gold-dim);
+  pointer-events:none;
+}
+.about-visual svg{ width:38%; opacity:0.9; }
+.about-text h2{ margin-bottom:22px; }
+.about-text p{ font-size:17px; margin-bottom:0; }
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services{ padding:var(--gap-section) 0; border-bottom:1px solid var(--gray-line); }
+.services-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1px;
+  background:var(--gray-line);
+  border:1px solid var(--gray-line);
+}
+@media(min-width:640px){ .services-grid{ grid-template-columns:1fr 1fr; } }
+@media(min-width:1024px){ .services-grid{ grid-template-columns:repeat(4,1fr); } }
+
+.service-card{
+  background:var(--black-card);
+  padding:44px 30px;
+  transition:background .4s;
+  position:relative;
+}
+.service-card:hover{ background:#1b1916; }
+.service-card:hover .service-icon{ box-shadow:0 0 24px -4px rgba(201,169,97,0.5); }
+.service-icon{
+  width:56px; height:56px;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--gold-dim);
+  border-radius:50%;
+  margin-bottom:26px;
+  transition:box-shadow .4s;
+}
+.service-icon svg{ width:26px; height:26px; }
+.service-card h3{ margin-bottom:12px; }
+.service-card p{ font-size:15px; }
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.gallery{ padding:var(--gap-section) 0; border-bottom:1px solid var(--gray-line); }
+.gallery-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+@media(min-width:700px){
+  .gallery-grid{ grid-template-columns:repeat(6,1fr); }
+  .g-item{ grid-column:span 3; }
+  .g-item.large{ grid-column:span 4; grid-row:span 2; }
+  .g-item.tall{ grid-column:span 2; grid-row:span 2; }
+}
+.g-item{
+  position:relative;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  border:1px solid var(--gray-line);
+  background:
+    repeating-linear-gradient(135deg, rgba(201,169,97,0.05) 0 2px, transparent 2px 26px),
+    linear-gradient(155deg, #1c1a16, #0c0c0b 70%);
+  cursor:default;
+}
+.g-item.large,.g-item.tall{ aspect-ratio:auto; }
+.g-item .g-icon{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0.35;
+  transition:transform .6s var(--ease), opacity .6s;
+}
+.g-item .g-icon svg{ width:30%; max-width:64px; }
+.g-item:hover .g-icon{ transform:scale(1.08); opacity:0.5; }
+.g-item .g-label{
+  position:absolute; right:0; bottom:0; left:0;
+  padding:20px 22px;
+  background:linear-gradient(0deg, rgba(0,0,0,0.85), transparent);
+  transform:translateY(10px);
+  opacity:0.85;
+  transition:transform .45s var(--ease), opacity .45s;
+}
+.g-item:hover .g-label{ transform:translateY(0); opacity:1; }
+.g-item .g-label span{
+  font-size:13px; letter-spacing:1px; color:var(--gold);
+  font-family:Georgia, serif;
+}
+.g-item::after{
+  content:'';
+  position:absolute; inset:0;
+  border:1px solid transparent;
+  transition:border-color .4s;
+}
+.g-item:hover::after{ border-color:var(--gold-dim); }
+
+.gallery-cta{
+  margin-top:48px;
+  text-align:center;
+}
+
+/* ============================================================
+   WHY US
+   ============================================================ */
+.why{ padding:var(--gap-section) 0; border-bottom:1px solid var(--gray-line); }
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:36px;
+}
+@media(min-width:640px){ .why-grid{ grid-template-columns:1fr 1fr; } }
+@media(min-width:1024px){ .why-grid{ grid-template-columns:repeat(4,1fr); } }
+.why-item{ text-align:center; padding:0 10px; }
+.why-icon{
+  width:52px; height:52px;
+  margin:0 auto 22px;
+  display:flex; align-items:center; justify-content:center;
+}
+.why-icon svg{ width:30px; height:30px; }
+.why-item h3{ font-size:17px; margin-bottom:10px; }
+.why-item p{ font-size:14.5px; }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact{ padding:var(--gap-section) 0; border-bottom:1px solid var(--gray-line); }
+.contact-grid{
+  display:grid;
+  gap:1px;
+  background:var(--gray-line);
+  border:1px solid var(--gray-line);
+}
+@media(min-width:800px){ .contact-grid{ grid-template-columns:1fr 1fr; } }
+.contact-card{
+  background:var(--black-card);
+  padding:44px 36px;
+}
+.contact-card .label{
+  font-size:13px; letter-spacing:2px; color:var(--gold);
+  text-transform:uppercase; font-family:Georgia, serif;
+  margin-bottom:16px; display:block;
+}
+.contact-phone-link{
+  display:block;
+  font-size:clamp(28px,4vw,36px);
+  font-weight:800;
+  color:var(--white);
+  direction:ltr; text-align:right;
+  margin-bottom:18px;
+  transition:color .3s;
+}
+.contact-phone-link:hover{ color:var(--gold-bright); }
+.contact-card .addr-text{
+  font-size:16.5px;
+  color:var(--gray-text);
+  margin-bottom:26px;
+  max-width:360px;
+}
+.contact-card .btn{ margin-top:4px; }
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta{
+  padding:var(--gap-section) 0;
+  text-align:center;
+  position:relative;
+  background:
+    radial-gradient(ellipse 70% 100% at 50% 0%, rgba(201,169,97,0.12), transparent 65%),
+    var(--black-deep);
+  border-bottom:1px solid var(--gray-line);
+  overflow:hidden;
+}
+.final-cta-mark{ width:54px; height:54px; margin:0 auto 30px; opacity:0.9; }
+.final-cta h2{ font-size:clamp(30px,5vw,50px); margin-bottom:10px; }
+.final-cta .brand-line{
+  font-size:18px; color:var(--gold-bright); font-weight:600; letter-spacing:0.5px;
+  margin-bottom:44px;
+}
+.final-cta .actions{
+  display:flex; flex-direction:column; gap:16px; align-items:center;
+}
+@media(min-width:560px){ .final-cta .actions{ flex-direction:row; justify-content:center; } }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{ padding:56px 0 120px; }
+@media(min-width:960px){ .site-footer{ padding-bottom:56px; } }
+.footer-inner{
+  display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px;
+}
+.footer-mark{ width:34px; height:34px; }
+.footer-brand{ font-family:var(--font-display); font-weight:800; font-size:18px; }
+.footer-tagline{ color:var(--gold); font-size:14px; }
+.footer-meta{ color:var(--gray-text); font-size:14px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; }
+.footer-links{ display:flex; gap:26px; margin-top:10px; }
+.footer-links a{ font-size:14px; color:var(--gray-text); transition:color .3s; }
+.footer-links a:hover{ color:var(--gold); }
+.footer-rule{ width:100%; max-width:220px; height:1px; background:var(--gray-line); margin:6px 0; }
+.footer-copy{ font-size:12.5px; color:#5c5952; margin-top:10px; }
+
+/* ============================================================
+   FLOATING MOBILE CALL BUTTON
+   ============================================================ */
+.floating-call{
+  position:fixed;
+  right:0; left:0; bottom:18px;
+  z-index:90;
+  display:flex; justify-content:center;
+  opacity:0; visibility:hidden; transform:translateY(16px);
+  transition:opacity .4s var(--ease), transform .4s var(--ease), visibility .4s;
+  padding:0 20px;
+}
+.floating-call.show{ opacity:1; visibility:visible; transform:translateY(0); }
+.floating-call a{
+  display:flex; align-items:center; gap:10px;
+  background:linear-gradient(135deg, var(--gold-bright), var(--gold));
+  color:#0a0a0a;
+  font-weight:700; font-size:15px;
+  padding:15px 30px;
+  border-radius:999px;
+  box-shadow:0 10px 30px -6px rgba(0,0,0,0.6), 0 0 22px -4px rgba(201,169,97,0.5);
+  width:100%; max-width:340px; justify-content:center;
+}
+.floating-call svg{ width:18px; height:18px; }
+@media(min-width:960px){ .floating-call{ display:none; } }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     EDITABLE SALON INFO — تمام اطلاعات قابل تغییر سالن از این‌جا کنترل می‌شود
+     ============================================================ -->
+<script>
+  window.SALON_CONFIG = {
+    name: "آرایشگاه حمید",
+    tagline: "استایل خاص، اعتماد به نفس دائم",
+    phone: "09918740812",          // برای لینک‌های tel:
+    phoneDisplay: "۰۹۹۱۸۷۴۰۸۱۲",     // شکل نمایشی فارسی
+    address: "فرهنگ شهر، فرهنگ ۱۸ شرقی، جنب پارکینگ مسجد سیدالشهدا",
+    instagramUrl: "[Instagram URL]", // بعداً جایگزین شود
+    mapsUrl: "[https://maps.app.goo.gl/zQA3oEB2FeNsLnHN6]"     // بعداً جایگزین شود
+  };
+</script>
+
+<!-- ============================================================ HEADER ============================================================ -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#home" class="brand" aria-label="آرایشگاه حمید">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="22" stroke="#c9a961" stroke-width="1"/>
+        <line x1="16" y1="14" x2="16" y2="34" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+        <line x1="32" y1="14" x2="32" y2="34" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16" y1="30" x2="32" y2="18" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">آرایشگاه حمید</span>
+    </a>
+
+    <nav class="main-nav" aria-label="منوی اصلی">
+      <ul>
+        <li><a href="#home">خانه</a></li>
+        <li><a href="#services">خدمات</a></li>
+        <li><a href="#gallery">نمونه‌کارها</a></li>
+        <li><a href="#about">درباره ما</a></li>
+        <li><a href="#contact">تماس</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="tel:09918740812" class="btn btn-gold header-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z"/></svg>
+        رزرو وقت
+      </a>
+      <button class="burger" id="burgerBtn" aria-label="باز کردن منو" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home" class="mnav-link">خانه</a>
+  <a href="#services" class="mnav-link">خدمات</a>
+  <a href="#gallery" class="mnav-link">نمونه‌کارها</a>
+  <a href="#about" class="mnav-link">درباره ما</a>
+  <a href="#contact" class="mnav-link">تماس</a>
+  <a href="tel:09918740812" class="btn btn-gold">رزرو وقت</a>
+</div>
+
+<main>
+  <!-- ============================================================ HERO ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero-stripes" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <svg class="hero-watermark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <circle cx="24" cy="24" r="22" stroke="#c9a961" stroke-width="0.6"/>
+      <line x1="16" y1="14" x2="16" y2="34" stroke="#c9a961" stroke-width="0.8"/>
+      <line x1="32" y1="14" x2="32" y2="34" stroke="#c9a961" stroke-width="0.8"/>
+      <line x1="16" y1="30" x2="32" y2="18" stroke="#c9a961" stroke-width="0.8"/>
+    </svg>
+
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-kicker reveal">Men's Barbershop</div>
+        <h1 class="reveal reveal-delay-1">آرایشگاه حمید</h1>
+        <p class="tagline reveal reveal-delay-2">استایل خاص، اعتماد به نفس دائم</p>
+        <p class="desc reveal reveal-delay-2">اصلاح حرفه‌ای مو، ریش و استایل مردانه با دقت و توجه به جزئیات.</p>
+
+        <div class="hero-actions reveal reveal-delay-3">
+          <a href="tel:09918740812" class="btn btn-gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z"/></svg>
+            رزرو وقت
+          </a>
+          <a href="#gallery" class="btn btn-outline">مشاهده نمونه‌کارها</a>
+        </div>
+
+        <div class="hero-phone-note reveal reveal-delay-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z"/></svg>
+          برای رزرو مستقیم تماس بگیرید: <b class="cfg-phoneDisplay" dir="ltr">۰۹۹۱۸۷۴۰۸۱۲</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ ABOUT / INTRO ============================================================ -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-visual reveal">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" stroke="#c9a961" stroke-width="0.8"/>
+          <line x1="16" y1="14" x2="16" y2="34" stroke="#c9a961" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="32" y1="14" x2="32" y2="34" stroke="#c9a961" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="16" y1="30" x2="32" y2="18" stroke="#c9a961" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="about-text reveal reveal-delay-1">
+        <div class="eyebrow">درباره ما</div>
+        <h2>استایل خاص، اعتماد به نفس دائم</h2>
+        <p>در آرایشگاه حمید، تمرکز ما روی ارائه یک استایل حرفه‌ای و متناسب با چهره و سلیقه شماست. از اصلاح مو و ریش تا حالت‌دهی نهایی، همه چیز با دقت و ظرافت انجام می‌شود.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ SERVICES ============================================================ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head center reveal">
+        <div class="eyebrow" style="justify-content:center">Services</div>
+        <h2>خدمات ما</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><line x1="8" y1="7.6" x2="20" y2="18"/><line x1="8" y1="16.4" x2="20" y2="6"/></svg>
+          </div>
+          <h3>اصلاح مو</h3>
+          <p>اصلاح و فرم‌دهی حرفه‌ای مو متناسب با استایل شما.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M6 4v9c0 4 2.5 7 6 7s6-3 6-7V4"/><line x1="6" y1="4" x2="18" y2="4"/><line x1="9" y1="9" x2="15" y2="9"/></svg>
+          </div>
+          <h3>اصلاح صورت</h3>
+          <p>اصلاح و مرتب‌سازی حرفه‌ای صورت و ریش.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M4 18 18 4"/><path d="M14 4h4v4"/></svg>
+          </div>
+          <h3>خط ریش</h3>
+          <p>ایجاد خط ریش دقیق و تمیز برای یک استایل حرفه‌ای.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M5 20c1-5 2-9 7-9s6 4 7 9"/><path d="M12 11V4"/><path d="M9 6c0-1.5 1.5-2.5 3-2s3 .5 3 2"/></svg>
+          </div>
+          <h3>سشوار و حالت‌دهی</h3>
+          <p>حالت‌دهی و فرم‌دهی نهایی مو برای استایل بهتر.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ GALLERY ============================================================ -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-head center reveal">
+        <div class="eyebrow" style="justify-content:center">Portfolio</div>
+        <h2>نمونه‌کارها</h2>
+      </div>
+
+      <!-- برای افزودن تصاویر واقعی: هر .g-item را با یک تگ <img loading="lazy" src="..." alt="..."> جایگزین کنید -->
+      <div class="gallery-grid">
+        <div class="g-item large reveal">
+          <div class="g-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><line x1="8" y1="7.6" x2="20" y2="18"/><line x1="8" y1="16.4" x2="20" y2="6"/></svg></div>
+          <div class="g-label"><span>فید (Fade)</span></div>
+        </div>
+        <div class="g-item tall reveal reveal-delay-1">
+          <div class="g-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1"><path d="M4 18 18 4"/><path d="M14 4h4v4"/></svg></div>
+          <div class="g-label"><span>خط ریش</span></div>
+        </div>
+        <div class="g-item reveal reveal-delay-1">
+          <div class="g-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1"><path d="M6 4v9c0 4 2.5 7 6 7s6-3 6-7V4"/><line x1="6" y1="4" x2="18" y2="4"/></svg></div>
+          <div class="g-label"><span>اصلاح ریش</span></div>
+        </div>
+        <div class="g-item reveal reveal-delay-2">
+          <div class="g-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-4 3-6 7-6s7 2 7 6"/></svg></div>
+          <div class="g-label"><span>مدل مو کلاسیک</span></div>
+        </div>
+        <div class="g-item reveal reveal-delay-2">
+          <div class="g-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1"><path d="M5 20c1-5 2-9 7-9s6 4 7 9"/><path d="M12 11V4"/></svg></div>
+          <div class="g-label"><span>استایل مردانه</span></div>
+        </div>
+        <div class="g-item reveal reveal-delay-3">
+          <div class="g-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+          <div class="g-label"><span>مدل مو مدرن</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-cta reveal">
+        <a href="[Instagram URL]" target="_blank" rel="noopener" class="btn btn-outline">
+          مشاهده نمونه‌کارهای بیشتر در اینستاگرام
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ WHY US ============================================================ -->
+  <section class="why">
+    <div class="container">
+      <div class="section-head center reveal">
+        <div class="eyebrow" style="justify-content:center">Why Us</div>
+        <h2>چرا آرایشگاه حمید؟</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item reveal">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>توجه به جزئیات</h3>
+          <p>دقت در هر مرحله از کار.</p>
+        </div>
+        <div class="why-item reveal reveal-delay-1">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><circle cx="12" cy="9" r="4"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></div>
+          <h3>استایل متناسب با چهره</h3>
+          <p>طراحی مطابق سلیقه و چهره شما.</p>
+        </div>
+        <div class="why-item reveal reveal-delay-2">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8 12h8"/></svg></div>
+          <h3>محیط حرفه‌ای و تمیز</h3>
+          <p>فضایی مرتب و استاندارد.</p>
+        </div>
+        <div class="why-item reveal reveal-delay-3">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M4 18 18 4"/><path d="M14 4h4v4"/></svg></div>
+          <h3>اصلاح با دقت و ظرافت</h3>
+          <p>خطوط تمیز و حرفه‌ای.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ CONTACT ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Contact</div>
+        <h2>وقتشه استایلت رو تغییر بدی</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <span class="label">شماره تماس</span>
+          <a href="tel:09918740812" class="contact-phone-link cfg-phoneDisplay">۰۹۹۱۸۷۴۰۸۱۲</a>
+          <p class="addr-text">برای رزرو وقت مستقیماً تماس بگیرید.</p>
+          <a href="tel:09918740812" class="btn btn-gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z"/></svg>
+            تماس بگیرید
+          </a>
+        </div>
+
+        <div class="contact-card reveal reveal-delay-1">
+          <span class="label">آدرس</span>
+          <p class="addr-text" style="font-size:18px;color:#f3f0ea;max-width:100%;">فرهنگ شهر، فرهنگ ۱۸ شرقی، جنب پارکینگ مسجد سیدالشهدا</p>
+          <a href="https://maps.app.goo.gl/zQA3oEB2FeNsLnHN6" target="_blank" rel="noopener" class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            مسیریابی
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ FINAL CTA ============================================================ -->
+  <section class="final-cta">
+    <div class="container">
+      <svg class="final-cta-mark reveal" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" stroke="#c9a961" stroke-width="1"/>
+        <line x1="16" y1="14" x2="16" y2="34" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+        <line x1="32" y1="14" x2="32" y2="34" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16" y1="30" x2="32" y2="18" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h2 class="reveal reveal-delay-1">آماده‌ای استایلت رو ارتقا بدی؟</h2>
+      <p class="brand-line reveal reveal-delay-2">آرایشگاه حمید</p>
+      <div class="actions reveal reveal-delay-3">
+        <a href="tel:09918740812" class="btn btn-gold">تماس برای رزرو</a>
+        <a href="[Instagram URL]" target="_blank" rel="noopener" class="btn btn-outline">مشاهده نمونه‌کارها</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <svg class="footer-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <circle cx="24" cy="24" r="22" stroke="#c9a961" stroke-width="1"/>
+      <line x1="16" y1="14" x2="16" y2="34" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+      <line x1="32" y1="14" x2="32" y2="34" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+      <line x1="16" y1="30" x2="32" y2="18" stroke="#c9a961" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <div class="footer-brand">آرایشگاه حمید</div>
+    <div class="footer-tagline">استایل خاص، اعتماد به نفس دائم</div>
+
+    <div class="footer-rule"></div>
+
+    <div class="footer-meta">
+      <span dir="ltr">۰۹۹۱۸۷۴۰۸۱۲</span>
+      <span>فرهنگ شهر، فرهنگ ۱۸ شرقی، جنب پارکینگ مسجد سیدالشهدا</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="[Instagram URL]" target="_blank" rel="noopener">اینستاگرام</a>
+      <a href="tel:09918740812">تماس</a>
+     <a href="https://maps.app.goo.gl/zQA3oEB2FeNsLnHN6" target="_blank" rel="noopener">مسیریابی</a>
+    </div>
+
+    <div class="footer-copy">© تمامی حقوق برای آرایشگاه حمید محفوظ است.</div>
+  </div>
+</footer>
+
+<!-- Floating mobile call button -->
+<div class="floating-call" id="floatingCall">
+  <a href="tel:09918740812">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z"/></svg>
+    تماس با حمید
+  </a>
+</div>
+
+<script>
+(function(){
+  // ---- populate editable config fields ----
+  document.querySelectorAll('.cfg-phoneDisplay').forEach(function(el){
+    el.textContent = window.SALON_CONFIG.phoneDisplay;
+  });
+
+  // ---- header scroll state ----
+  var header = document.getElementById('siteHeader');
+  var floatingCall = document.getElementById('floatingCall');
+  function onScroll(){
+    var y = window.scrollY || window.pageYOffset;
+    header.classList.toggle('scrolled', y > 30);
+    floatingCall.classList.toggle('show', y > 500);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive:true });
+
+  // ---- mobile nav ----
+  var burger = document.getElementById('burgerBtn');
+  var mobileNav = document.getElementById('mobileNav');
+  function closeMobileNav(){
+    mobileNav.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  burger.addEventListener('click', function(){
+    var isOpen = mobileNav.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMobileNav);
+  });
+
+  // ---- scroll-margin for anchored sections (sticky header offset) ----
+  document.querySelectorAll('section[id], main [id]').forEach(function(el){
+    el.style.scrollMarginTop = '90px';
+  });
+
+  // ---- reveal on scroll ----
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -60px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+})();
+</script>
+</body>
+</html>
